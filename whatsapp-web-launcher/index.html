@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp Web Secure Launcher</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Temporary Browser Session</p>
+        <h1>WhatsApp Web Secure Launcher</h1>
+        <p class="subtitle">
+          Launches Google Chrome in a fresh Incognito window with a disposable profile folder, so each run
+          starts from a clean QR login.
+        </p>
+      </section>
+
+      <section class="status-card">
+        <div class="status-row">
+          <span id="statusBadge" class="status-badge ready">Ready</span>
+          <p id="statusText">Preparing the launcher...</p>
+        </div>
+
+        <label class="field-label" for="chromePath">Chrome Path (optional)</label>
+        <input
+          id="chromePath"
+          type="text"
+          placeholder="Leave blank to auto-detect chrome.exe"
+          spellcheck="false"
+        />
+
+        <div class="meta-row">
+          <span class="meta-label">Current Chrome Path</span>
+          <code id="detectedPath">Checking...</code>
+        </div>
+
+        <div class="button-row">
+          <button id="openButton" type="button">Open WhatsApp Web</button>
+          <button id="closeButton" type="button" class="secondary" disabled>Close Session</button>
+        </div>
+      </section>
+
+      <section class="notes">
+        <h2>Session Rules</h2>
+        <ul>
+          <li>Chrome always opens with <code>--incognito</code> and <code>--new-window</code>.</li>
+          <li>A brand-new temporary Chrome profile folder is created for every launch.</li>
+          <li>When the Chrome window closes, the temporary profile folder is removed.</li>
+          <li>No WhatsApp cookies, cache, or browser storage are kept by this launcher.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="./renderer.js"></script>
+  </body>
+  </html>
