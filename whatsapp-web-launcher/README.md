@@ -34,6 +34,18 @@ Every launch uses a disposable Chrome profile, so closing the Chrome window remo
 npm start
 ```
 
+## Build EXE
+
+```powershell
+npm run build:win
+```
+
+The portable Windows executable will be created in:
+
+```text
+dist\WhatsApp-Web-Secure-Launcher-1.0.0.exe
+```
+
 ## Chrome Path Configuration
 
 The launcher tries these locations automatically:

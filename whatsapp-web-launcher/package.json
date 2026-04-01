@@ -5,9 +5,40 @@
   "description": "Temporary WhatsApp Web launcher using Chrome Incognito and an ephemeral profile.",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build:win": "electron-builder --win portable"
   },
   "devDependencies": {
-    "electron": "^29.4.6"
+    "electron": "^29.4.6",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.techsangam.whatsappincognitolauncher",
+    "productName": "WhatsApp Web Secure Launcher",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "styles.css",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "WhatsApp-Web-Secure-Launcher-${version}.exe"
+    },
+    "portable": {
+      "artifactName": "WhatsApp-Web-Secure-Launcher-${version}.exe"
+    }
   }
 }
